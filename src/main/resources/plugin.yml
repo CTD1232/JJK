@@ -1,0 +1,12 @@
+name: JujutsuCraft
+version: 0.1.0
+main: jjk.JJKPlugin
+api-version: '1.21'
+description: Jujutsu Kaisen cursed energy, techniques, domains and reverse cursed technique, triggered by items.
+commands:
+  jjk:
+    description: JujutsuCraft admin command
+    usage: /jjk <give|energy|cast|reload|list>
+permissions:
+  jjk.admin:
+    default: op
