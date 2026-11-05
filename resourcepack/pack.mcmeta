@@ -1,0 +1,12 @@
+{
+  "pack": {
+    "pack_format": 64,
+    "min_format": 46,
+    "max_format": 999,
+    "supported_formats": {
+      "min_inclusive": 46,
+      "max_inclusive": 999
+    },
+    "description": "JujutsuCraft item textures"
+  }
+}

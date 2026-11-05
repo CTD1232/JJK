@@ -1,0 +1,132 @@
+{
+  "model": {
+    "type": "minecraft:range_dispatch",
+    "property": "minecraft:custom_model_data",
+    "index": 0,
+    "entries": [
+      {
+        "threshold": 7003,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/reversal_talisman"
+        }
+      },
+      {
+        "threshold": 8001,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/orb_blue"
+        }
+      },
+      {
+        "threshold": 8002,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/orb_red"
+        }
+      },
+      {
+        "threshold": 8003,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/orb_purple"
+        }
+      },
+      {
+        "threshold": 8004,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/flame"
+        }
+      },
+      {
+        "threshold": 8005,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/slash"
+        }
+      },
+      {
+        "threshold": 8006,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/wheel"
+        }
+      },
+      {
+        "threshold": 8007,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/elephant"
+        }
+      },
+      {
+        "threshold": 8008,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/nail"
+        }
+      },
+      {
+        "threshold": 8009,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/bolt"
+        }
+      },
+      {
+        "threshold": 8010,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/stars"
+        }
+      },
+      {
+        "threshold": 8011,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/shrine"
+        }
+      },
+      {
+        "threshold": 8012,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/shadow"
+        }
+      },
+      {
+        "threshold": 8013,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/ring"
+        }
+      },
+      {
+        "threshold": 8014,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/rika"
+        }
+      },
+      {
+        "threshold": 8015,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/gavel"
+        }
+      },
+      {
+        "threshold": 8016,
+        "model": {
+          "type": "minecraft:model",
+          "model": "jjk:item/vfx/uzumaki"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/paper"
+    }
+  }
+}
