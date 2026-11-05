@@ -1,0 +1,26 @@
+name: Build
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - run: mvn -B package
+      - name: Zip resource pack
+        run: cd resourcepack && zip -r ../JujutsuCraft-Pack.zip . && cd .. && sha1sum JujutsuCraft-Pack.zip
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest build
+          files: |
+            target/JujutsuCraft.jar
+            JujutsuCraft-Pack.zip
