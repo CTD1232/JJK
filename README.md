@@ -46,3 +46,7 @@ Needs the pack on clients; set `visuals.enabled: false` to use particles/blocks 
 Everything is in `config.yml`: costs, cooldowns, damage, radii, shells; rebind any technique to any trigger
 (right_click, shift_right_click, left_click, shift_left_click, swap, shift_swap) on any item.
 New techniques: extend `Technique`, register in `TechniqueRegistry`, add a config section.
+
+## Note on `_stale/`
+Five files (MarkManager, MeleeManager, SummonManager, SummonListener, MeleeListener) were found in the project that duplicate features
+implemented elsewhere and broke the build. They were moved out of `src/` into `_stale/` (as .txt, not compiled). Safe to delete.
