@@ -56,23 +56,6 @@ public class TechniqueRegistry {
         register(new AbsorbSpiritTechnique(plugin));
         register(new ReleaseSpiritsTechnique(plugin));
         register(new UzumakiTechnique(plugin));
-        // Milestone 2
-        register(new RatioTechnique(plugin));
-        register(new OvertimeTechnique(plugin));
-        register(new BlackFlashTechnique(plugin));
-        register(new DivergentFistTechnique(plugin));
-        register(new ResonanceNailTechnique(plugin));
-        register(new HairpinTechnique(plugin));
-        register(new HeavenlyRestrictionTechnique(plugin));
-        register(new PlayfulCloudTechnique(plugin));
-        register(new SplitSoulTechnique(plugin));
-        register(new InvertedSpearTechnique(plugin));
-        register(new DivineDogsTechnique(plugin));
-        register(new NueTechnique(plugin));
-        register(new MaxElephantTechnique(plugin));
-        register(new RabbitEscapeTechnique(plugin));
-        register(new ChimeraShadowGardenTechnique(plugin));
-        register(new MahoragaTechnique(plugin));
     }
 
     /** Add your own techniques here: register(new MyTechnique(plugin)) and give it a config section. */

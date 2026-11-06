@@ -56,7 +56,7 @@ class DivineDogsTechnique extends Technique {
             if (target != null) w.setTarget(target);
             w.getWorld().spawnParticle(Particle.SMOKE, l.clone().add(0, 0.5, 0), 25, 0.3, 0.4, 0.3, 0.05);
         }
-        p.getWorld().playSound(p.getLocation(), Sound.ENTITY_WOLF_HOWL, 1.5f, 0.8f);
+        p.getWorld().playSound(p.getLocation(), Sound.ENTITY_WOLF_GROWL, 1.5f, 0.8f);
         return true;
     }
 }

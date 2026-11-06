@@ -16,12 +16,9 @@ public class JJKPlugin extends JavaPlugin {
     private InfinityManager infinity;
     private ShikigamiManager shikigami;
     private HeavenlyRestrictionManager heavenly;
-    private HeavenlyRestrictionManager heavenly;
-    private MarkManager marks;
-    private MeleeManager melee;
-    private SummonManager summons;
     private boolean internalDamage;
     private boolean bypassInfinity;
+    private final java.util.Map<java.util.UUID, Long> lastAttack = new java.util.HashMap<>();
 
     @Override
     public void onEnable() {
@@ -33,18 +30,12 @@ public class JJKPlugin extends JavaPlugin {
         infinity = new InfinityManager(this);
         shikigami = new ShikigamiManager(this);
         heavenly = new HeavenlyRestrictionManager(this);
-        heavenly = new HeavenlyRestrictionManager(this);
-        marks = new MarkManager();
-        melee = new MeleeManager();
-        summons = new SummonManager(this);
         techniques = new TechniqueRegistry(this);
         abilities = new AbilityManager(this);
 
         getServer().getPluginManager().registerEvents(new ItemListener(this), this);
         getServer().getPluginManager().registerEvents(new CombatListener(this), this);
         getServer().getPluginManager().registerEvents(new PackListener(this), this);
-        getServer().getPluginManager().registerEvents(new MeleeListener(this), this);
-        getServer().getPluginManager().registerEvents(new SummonListener(this), this);
         JJKCommand cmd = new JJKCommand(this);
         getCommand("jjk").setExecutor(cmd);
         getCommand("jjk").setTabCompleter(cmd);
@@ -52,16 +43,16 @@ public class JJKPlugin extends JavaPlugin {
         energy.start();
         infinity.start();
         shikigami.start();
-        summons.start();
     }
 
     @Override
     public void onDisable() {
         if (domains != null) domains.endAll();
         if (shikigami != null) shikigami.endAll();
+        if (heavenly != null) {
+            for (Player p : getServer().getOnlinePlayers()) if (heavenly.isActive(p)) heavenly.disable(p);
+        }
         jjk.util.VFX.clear();
-        if (summons != null) for (var p : getServer().getOnlinePlayers()) summons.dismiss(p, null);
-        if (heavenly != null) for (var p : getServer().getOnlinePlayers()) heavenly.set(p, false);
     }
 
     public EnergyManager energy() { return energy; }
@@ -70,19 +61,12 @@ public class JJKPlugin extends JavaPlugin {
     public ItemManager items() { return items; }
     public DomainManager domains() { return domains; }
     public InfinityManager infinity() { return infinity; }
+    public ShikigamiManager shikigami() { return shikigami; }
     public HeavenlyRestrictionManager heavenly() { return heavenly; }
-    public MarkManager marks() { return marks; }
-    public MeleeManager melee() { return melee; }
-    public SummonManager summons() { return summons; }
-
-    private final java.util.Map<java.util.UUID, Long> lastAttack = new java.util.HashMap<>();
 
     /** Records that this entity just hurt a player (Higuruma's trials judge on this). */
     public void recordAttack(java.util.UUID id) { lastAttack.put(id, System.currentTimeMillis()); }
     public long lastAttack(java.util.UUID id) { return lastAttack.getOrDefault(id, 0L); }
-
-    public ShikigamiManager shikigami() { return shikigami; }
-    public HeavenlyRestrictionManager heavenly() { return heavenly; }
 
     public net.kyori.adventure.text.Component legacy(String s) {
         return LegacyComponentSerializer.legacyAmpersand().deserialize(s);
